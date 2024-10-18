@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
     <head>
         <title>Form</title>
@@ -13,6 +13,9 @@
  	.error {
      		color: red;
      		font-weight: bold;
+	}
+	.inputValid{
+		color:green;
 	}
     </style>
       <form id="regForm">
@@ -48,6 +51,7 @@
                    </lable>
                    Male<input type="radio" id="gender" name="gender" value="male" class="form-check-input fw-normal">
                    Female<input type="radio" id="gender" name="gender" value="female" class="form-check-input fw-normal">
+		<label id="gender-error" class="error" for="gender"></label>
                 </div>
                 <div class="row mt-4">
                    <label for="email">
@@ -60,6 +64,12 @@
                        Password
                    </lable>
                    <input type="password" id="pass" name="pass" placeholder="Enter the password" Class="form-control col-12 border border-info fw-normal">
+                </div> 
+		<div class="row mt-4">
+                   <label for="pass">
+                       Confirm Password
+                   </lable>
+                   <input type="password" id="cpass" name="cpass" placeholder="Re-enter the password" Class="form-control col-12 border border-info fw-normal">
                 </div> 
                 <div class="mt-4">
                    <label for="terms">
