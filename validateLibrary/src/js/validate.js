@@ -8,7 +8,7 @@ $(document).ready(function(){
 			phone:{
 				required:true,
                                 minlength:10,
-                                maxlength:10,
+                                maxlength:10
                         
 			},
 			dob:{
@@ -19,21 +19,25 @@ $(document).ready(function(){
                                 range: [1, 100]
 			},
 			gender:{
-                              required:true
+                              	required:true
 			},
 			mail:{
 				required:true,
                                 email:true
 			},
 			pass:{
-                              required:true,
-                              minlength: 8,
-                              pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).*$/
+                              	required:true,
+                              	minlength: 8,
+                              	pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).*$/
+			},
+			cpass:{
+				required:true,
+				equalTo:"#pass"
 			},
 			terms:{
 				required:true
 			}
-		},
+                },
                 messages:{
 			name:"Please enter your name",
 			dob:"Please enter your date of birth",
@@ -58,13 +62,13 @@ $(document).ready(function(){
                                 minlength:"Must contain mininum 8 character",
  				pattern:"Enter a strong password"
 			     },
-			terms:"Please accept the terms"
-                      
-		},
-               errorPlacement: function(error, element) {
-            		error.insertAfter(element);
-        	}
-             
+			cpass:{
+				
+                                required:"Please enter password",
+                                password:"Password not matching",
+                        },
+			terms:"Please accept the terms"                     
+		}             
      });
 	$("#regForm").on("submit", function(event) {
         if ($(this).valid()) { 
